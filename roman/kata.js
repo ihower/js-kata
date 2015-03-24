@@ -22,6 +22,10 @@ exports.convert = function(n){
     n -= 4
   }
 
-  return str + Array(n+1).join("I");
+  while (n >= 1 ) {
+    str += "I";
+    n -= 1
+  }
+  return str;
 
 }
