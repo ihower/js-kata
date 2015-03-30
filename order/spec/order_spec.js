@@ -14,7 +14,14 @@ describe("order", function () {
     it("should have default amount is 0", function () {
       expect(order.amount()).toBe(0);
     })
+  })
 
+  xdescribe("#paid", function(){
+    it("should be false if status is new")
+
+    xit("should be true if status is paid or shipping", function(){
+      //...
+    })
   })
 
   describe("#amount", function() {
