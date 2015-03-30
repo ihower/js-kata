@@ -18,10 +18,16 @@ describe("order", function () {
   })
 
   describe("#amount", function() {
+    var user, order;
+
     describe("when user is vip",function(){
+
+      beforeEach(function(){
+        user = new User( { is_vip: true } )
+      })
+
       it("should discount five percent if total >= 1000", function () {
-        var user = new User( { is_vip: true } )
-        var order = new Order( user, { total: 2000 } )
+        order = new Order( user, { total: 2000 } )
         expect(order.amount()).toBe(1900)
       })
 
