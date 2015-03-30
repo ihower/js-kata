@@ -12,7 +12,7 @@ describe("order", function () {
     })
 
     it("should have default amount is 0", function () {
-      expect(order.amount).toBe(0);
+      expect(order.amount()).toBe(0);
     })
 
   })
@@ -22,13 +22,13 @@ describe("order", function () {
       it("should discount five percent if total >= 1000", function () {
         var user = new User( { is_vip: true } )
         var order = new Order( user, { total: 2000 } )
-        expect(order.amount).toBe(1900)
+        expect(order.amount()).toBe(1900)
       })
 
       it("should discount ten percent if total >= 10000", function () {
         var user = new User( { is_vip: true } )
         var order = new Order( user, { total: 10000 } )
-        expect(order.amount).toBe(9000)
+        expect(order.amount()).toBe(9000)
       })
     })
 
@@ -36,7 +36,7 @@ describe("order", function () {
       it("should discount three percent if total >= 10000", function () {
         var user = new User( { is_vip: false } )
         var order = new Order( user, { total: 10000 } )
-        expect(order.amount).toBe(9700)
+        expect(order.amount()).toBe(9700)
       })
     })
   })
