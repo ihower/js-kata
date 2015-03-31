@@ -13,13 +13,5 @@ TrainClient.prototype.query = function(train_id, callback) {
 
 }
 
-TrainClient.prototype.reserve = function(train_id, seat_id, callback) {
-
-  this.request.post("https://ihower.tw/test.json" , function (error, response, body)  {
-    callback( JSON.parse(body) )
-  })
-
-}
-
 
 exports.TrainClient = TrainClient;
