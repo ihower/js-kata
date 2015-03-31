@@ -12,6 +12,8 @@ describe("TrainClient", function () {
     var data = [ { seat_id: 1 }, { seat_id: 2 } ]
 
     spyOn(client.request, 'get').and.callFake(function(url, callback) {
+      // url is this.host + "/train/" + train_id
+      // callback is function (error, response, body)
       callback(null, 200, JSON.stringify(data));
     });
 
