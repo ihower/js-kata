@@ -65,5 +65,18 @@ describe("order", function () {
     })
   })
 
+  describe("#ship!", function(){
+    it("should call ezship API", function(){
+      user = new User();
+      ezcat = { deliver: function(user) { console.log("3-rd library") } };
+      order = new Order(user, { gateway: ezcat } );
+
+      spyOn(ezcat, "deliver")
+
+      order.ship();
+
+      expect( ezcat.deliver ).toHaveBeenCalledWith(user);
+    })
+  })
 
 })
