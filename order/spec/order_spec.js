@@ -54,4 +54,16 @@ describe("order", function () {
     })
   })
 
+  describe("#receiver_name", function(){
+    it("should be user name", function(){
+      user = new User();
+      order = new Order(user);
+
+      spyOn(user, "full_name").and.returnValue("GG")
+
+      expect( order.receiver_name() ).toBe("GG")
+    })
+  })
+
+
 })

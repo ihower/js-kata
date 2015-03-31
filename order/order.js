@@ -25,4 +25,8 @@ Order.prototype.amount = function(){
   }
 }
 
+Order.prototype.receiver_name = function(){
+  return this.user.full_name();
+}
+
 exports.Order = Order;
