@@ -9,7 +9,7 @@ describe("TrainClient", function () {
   });
 
   it("should query train data", function (done) {
-    var data = { foo: 'bar', bar: 123 }
+    var data = [ { seat_id: 1 }, { seat_id: 2 } ]
 
     spyOn(client.request, 'get').and.callFake(function(url, callback) {
       callback(null, 200, JSON.stringify(data));

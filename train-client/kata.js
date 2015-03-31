@@ -7,7 +7,7 @@ var TrainClient = function(host){
 
 TrainClient.prototype.query = function(train_id, callback) {
 
-  this.request.get("https://ihower.tw/test.json" , function (error, response, body)  {
+  this.request.get(this.host + "/train/" + train_id , function (error, response, body)  {
     callback( JSON.parse(body) )
   })
 
